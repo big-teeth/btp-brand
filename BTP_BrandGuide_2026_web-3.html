@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Teeth Productions — Brand Core 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500&family=Barlow+Condensed:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red:  #B20022;
+  --red-hover: #8E001B;
+  --dark: #333333;
+  --off:  #F5F3EF;
+  --g66:  #666666;
+  --g99:  #999999;
+  --warm: #E8E5E0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Barlow', sans-serif; background: var(--dark); color: var(--dark); line-height: 1.6; }
+
+/* ── LAYOUT ENGINE (72/56/48 Y & 52/32/24 X) ── */
+.inner { max-width: 1280px; margin: 0 auto; padding: 72px 52px; }
+@media (max-width: 1024px) { .inner { padding: 56px 32px; } }
+@media (max-width: 600px) { .inner { padding: 48px 24px; } }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100; background: var(--dark);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px; height: 64px;
+}
+.nav-links a { font-family: 'Barlow Condensed'; font-weight: 700; color: var(--g66); text-decoration: none; text-transform: uppercase; font-size: 11px; margin-left: 24px; transition: 0.2s; }
+.nav-links a:hover { color: #fff; }
+
+/* ── TYPE STYLES ── */
+.spec-tag { font-family: 'Barlow Condensed'; font-weight: 700; font-size: 10px; color: var(--red); text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-bottom: 12px; }
+.elite { font-family: 'Courier New', monospace; font-size: 13px; color: var(--g99); margin-bottom: 4px; display: block; }
+
+/* ── COLOR GRID ── */
+.palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 2px; background: #ddd; border: 1px solid #ddd; margin-top: 20px; }
+.swatch { background: #fff; display: flex; flex-direction: column; }
+.sw-color { height: 110px; cursor: pointer; transition: 0.2s; position: relative; }
+.sw-color:hover::after { content: 'COPY HEX'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Barlow Condensed'; font-weight: 900; color: #fff; font-size: 12px; letter-spacing: 0.1em; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.sw-body { padding: 16px; }
+.sw-hex { font-family: 'Barlow Condensed'; font-weight: 900; font-size: 26px; display: block; line-height: 1; margin-bottom: 8px; }
+.sw-role { font-size: 11px; color: var(--g66); line-height: 1.4; display: block; font-weight: 500; }
+
+/* ── LOGO DISPLAY (Shrunk 50%) ── */
+.logo-display { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #eee; border: 1px solid #eee; margin-top: 20px; }
+.logo-box { padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.logo-box img { max-width: 50%; height: auto; margin-bottom: 15px; } 
+.logo-label { font-family: 'Barlow Condensed'; font-weight: 700; font-size: 10px; text-transform: uppercase; color: var(--g99); letter-spacing: 0.1em; margin-bottom: 10px; }
+.btn-dl { font-family: 'Barlow Condensed'; font-weight: 700; font-size: 10px; color: var(--red); text-decoration: none; border: 1px solid var(--red); padding: 4px 10px; text-transform: uppercase; transition: 0.2s; }
+.btn-dl:hover { background: var(--red); color: #fff; }
+
+/* ── COMPONENTS ── */
+.comp-card { background: #fff; border: 1px solid #eee; padding: 24px; margin-bottom: 24px; }
+.comp-label { font-family: 'Barlow Condensed'; font-weight: 700; font-size: 11px; color: var(--g99); text-transform: uppercase; display: block; margin-bottom: 16px; }
+.pill { font-family: 'Barlow Condensed'; font-weight: 700; font-size: 11px; text-transform: uppercase; padding: 6px 14px; border: 2px solid var(--red); color: var(--red); display: inline-block; margin: 0 8px 8px 0; letter-spacing: 0.08em; }
+.pill-dark { border-color: var(--g99); color: var(--g99); }
+.btn { font-family: 'Barlow Condensed'; font-weight: 700; text-transform: uppercase; padding: 12px 28px; border: 2px solid var(--red); cursor: pointer; display: inline-block; text-decoration: none; font-size: 12px; letter-spacing: 0.12em; transition: 0.2s; }
+.btn-red { background: var(--red); color: #fff; }
+.btn-red:hover { background: var(--red-hover); border-color: var(--red-hover); }
+.btn-ghost { background: transparent; color: var(--red); border: 2px solid var(--red); }
+.btn-ghost:hover { background: var(--red); color: #fff; }
+
+/* ── TABLES ── */
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.data-table th { text-align: left; font-family: 'Barlow Condensed'; font-weight: 700; color: var(--g99); text-transform: uppercase; padding: 12px 10px; border-bottom: 2px solid #eee; }
+.data-table td { padding: 14px 10px; border-bottom: 1px solid #eee; }
+
+#toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--dark); color: #fff; padding: 10px 20px; font-family: 'Barlow Condensed'; font-weight: 700; opacity: 0; transition: 0.3s; z-index: 999; }
+#toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<div id="toast">Hex Copied</div>
+
+<nav>
+  <img src="https://big-teeth.github.io/brand-guide/images/BTP_Box_Red_Vertical.png" style="height:32px;">
+  <div class="nav-links">
+    <a href="#palette">Palette</a>
+    <a href="#typography">Typography</a>
+    <a href="#logos">Logos</a>
+    <a href="#components">Components</a>
+    <a href="#specs">System Specs</a>
+  </div>
+</nav>
+
+<section style="background: var(--dark); color: #fff;">
+  <div class="inner">
+    <span class="elite">big teeth productions</span>
+    <h1 style="font-family:'Barlow Condensed'; font-weight:900; font-size:clamp(60px, 10vw, 120px); line-height:0.85; text-transform:uppercase;">BRAND<br>CORE <span style="color:var(--red);">2026</span></h1>
+    <p style="max-width: 500px; margin-top: 20px; color: var(--g66); font-weight: 500;">Reference for maintaining production quality in Wix Studio, Slide Decks, and Social Media.</p>
+  </div>
+</section>
+
+<section id="palette" style="background: var(--off);">
+  <div class="inner">
+    <span class="spec-tag">01 — Color Palette</span>
+    <div class="palette">
+      <div class="swatch"><div class="sw-color" style="background:#B20022;" onclick="copy('#B20022')"></div><div class="sw-body"><span class="sw-hex">#B20022</span><span class="sw-role">PRIMARY RED<br>Buttons, Labels, Icons</span></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#333333;" onclick="copy('#333333')"></div><div class="sw-body"><span class="sw-hex">#333333</span><span class="sw-role">DARK<br>Main Text, Dark Sections</span></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#F5F3EF;" onclick="copy('#F5F3EF')"></div><div class="sw-body"><span class="sw-hex">#F5F3EF</span><span class="sw-role">OFF-WHITE<br>Web Default Background</span></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#FFFFFF; border-bottom:1px solid #eee;" onclick="copy('#FFFFFF')"></div><div class="sw-body"><span class="sw-hex">#FFFFFF</span><span class="sw-role">WHITE<br>Print, PDF, Slides</span></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#999999;" onclick="copy('#999999')"></div><div class="sw-body"><span class="sw-hex">#999999</span><span class="sw-role">GREY 99<br>Muted Text, Metadata</span></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#666666;" onclick="copy('#666666')"></div><div class="sw-body"><span class="sw-hex">#666666</span><span class="sw-role">GREY 66<br>Supporting Body Copy</span></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#E8E5E0;" onclick="copy('#E8E5E0')"></div><div class="sw-body"><span class="sw-hex">#E8E5E0</span><span class="sw-role">WARM GREY<br>Rule Lines, Spacers</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="typography" style="background: #fff;">
+  <div class="inner">
+    <span class="spec-tag">02 — Typography Hierarchy</span>
+    <table class="data-table">
+      <thead><tr><th>Role</th><th>Font / Weight</th><th>Visual Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Display</strong></td><td>Barlow Condensed Black</td><td><span style="font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:32px; text-transform:uppercase; line-height:1;">BIG TEETH STYLE</span></td></tr>
+        <tr><td><strong>Section Title</strong></td><td>Barlow Condensed Bold</td><td><span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:24px; color:var(--red); text-transform:uppercase;">BRAND FILMS</span></td></tr>
+        <tr><td><strong>Body Copy</strong></td><td>Barlow Medium</td><td style="max-width:300px;"><span style="font-family:'Barlow',sans-serif; font-weight:500; font-size:14px;">Partnering with brands to tell stories that matter.</span></td></tr>
+        <tr><td><strong>Personality</strong></td><td>Special Elite</td><td><span class="elite" style="font-size:16px;">you really should see</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="logos" style="background: var(--off);">
+  <div class="inner">
+    <span class="spec-tag">03 — Logo Application</span>
+    
+    <p class="elite">Vertical Box Marks</p>
+    <div class="logo-display">
+      <div class="logo-box" style="background:#fff;">
+        <img src="https://big-teeth.github.io/brand-guide/images/BTP_Box_Red_Vertical.png">
+        <span class="logo-label">On White / Off-White</span>
+        <a href="https://big-teeth.github.io/brand-guide/images/BTP_Box_Red_Vertical.png" target="_blank" class="btn-dl">Download File</a>
+      </div>
+      <div class="logo-box" style="background:var(--dark);">
+        <img src="https://big-teeth.github.io/brand-guide/images/BTP_Box_Red_Vertical.png">
+        <span class="logo-label" style="color:var(--g66);">On Dark / Black</span>
+        <a href="https://big-teeth.github.io/brand-guide/images/BTP_Box_Red_Vertical.png" target="_blank" class="btn-dl" style="color:var(--g99); border-color:#555;">Download File</a>
+      </div>
+    </div>
+
+    <p class="elite" style="margin-top:40px;">Horizontal Lockups</p>
+    <div class="logo-display">
+      <div class="logo-box" style="background:#fff;">
+        <img src="https://drive.google.com/thumbnail?id=1l0wvgWOBLXhZWn0segnZztEpClTUxc3k&sz=w1000" alt="BTP Horizontal">
+        <span class="logo-label">Main Lockup — Light</span>
+        <a href="https://drive.google.com/file/d/1l0wvgWOBLXhZWn0segnZztEpClTUxc3k/view" target="_blank" class="btn-dl">Download File</a>
+      </div>
+      <div class="logo-box" style="background:var(--dark);">
+        <img src="https://drive.google.com/thumbnail?id=1l0wvgWOBLXhZWn0segnZztEpClTUxc3k&sz=w1000" alt="BTP Horizontal">
+        <span class="logo-label" style="color:var(--g66);">Main Lockup — Dark</span>
+        <a href="https://drive.google.com/file/d/1l0wvgWOBLXhZWn0segnZztEpClTUxc3k/view" target="_blank" class="btn-dl" style="color:var(--g99); border-color:#555;">Download File</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="components" style="background: #fff;">
+  <div class="inner">
+    <span class="spec-tag">04 — Buttons & Pills</span>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px;">
+      <div class="comp-card">
+        <span class="comp-label">Light Context</span>
+        <div style="margin-bottom:20px;">
+          <button class="btn btn-red">Primary Action</button>
+          <button class="btn btn-ghost" style="margin-left:10px;">Secondary</button>
+        </div>
+        <div style="margin-bottom:20px;">
+          <span class="pill">Animation</span><span class="pill">Live Action</span>
+        </div>
+      </div>
+      <div class="comp-card" style="background:var(--dark); border:none;">
+        <span class="comp-label" style="color:var(--g66);">Dark Context</span>
+        <div style="margin-bottom:20px;">
+          <button class="btn btn-red">Primary Action</button>
+          <button class="btn btn-ghost" style="color:#fff; border-color:#fff; margin-left:10px;">Secondary</button>
+        </div>
+        <div style="margin-bottom:20px;">
+          <span class="pill pill-dark">Animation</span><span class="pill pill-dark">Live Action</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="specs" style="background: var(--off);">
+  <div class="inner">
+    <span class="spec-tag">05 — Layout & Guardrails</span>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:40px;">
+      <div>
+        <h4 style="font-family:'Barlow Condensed'; text-transform:uppercase; margin-bottom:15px;">Wix Studio Spacing</h4>
+        <table class="data-table" style="background:#fff;">
+          <thead><tr><th>Breakpoint</th><th>Y (Padding)</th><th>X (Margin)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Desktop (1280)</strong></td><td>72px</td><td>52px</td></tr>
+            <tr><td><strong>Tablet (768)</strong></td><td>56px</td><td>32px</td></tr>
+            <tr><td><strong>Mobile (390)</strong></td><td>48px</td><td>24px</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:#fff; border-top: 4px solid var(--red); padding: 30px;">
+        <h4 style="font-family:'Barlow Condensed'; text-transform:uppercase; color:var(--red); margin-bottom:20px;">The Dealbreakers</h4>
+        <ul style="list-style:none; font-weight:700; font-size:14px;">
+          <li style="margin-bottom:12px;"><span style="color:var(--red); margin-right:10px;">✕</span> No opacity on text in Wix.</li>
+          <li style="margin-bottom:12px;"><span style="color:var(--red); margin-right:10px;">✕</span> No Barlow Condensed for body copy.</li>
+          <li><span style="color:var(--red); margin-right:10px;">✕</span> No rounded corners on UI.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--dark); padding:60px 52px; display:flex; justify-content:space-between; align-items:center;">
+  <div>
+    <img src="https://big-teeth.github.io/brand-guide/images/BTP_Box_Red_Vertical.png" style="height:32px; margin-bottom:10px; display:block;">
+    <span class="elite">Big Teeth Productions // 2026</span>
+  </div>
+  <p class="elite" style="text-align:right;">Brains. Heart. Humility.</p>
+</footer>
+
+<script>
+function copy(text) {
+  navigator.clipboard.writeText(text);
+  const t = document.getElementById('toast');
+  t.textContent = `Hex ${text} copied!`;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+</script>
+
+</body>
+</html>
