@@ -176,6 +176,7 @@ nav {
     <a href="#p09">Handoff</a>
     <a href="#p10">FAQ</a>
     <a href="#p11">Pills & Buttons</a>
+    <a href="#p12">Photo Strip</a>
     <a href="#logos">Logos</a>
     <a href="#guards">Guardrails</a>
   </div>
@@ -1025,6 +1026,107 @@ nav {
 </div>
 
 </div><!-- /section-wrap -->
+
+<!-- ════════════════════════════════════════════════ -->
+<!-- PATTERN 12 — PHOTO STRIP -->
+<!-- ════════════════════════════════════════════════ -->
+<section id="p12" class="section-wrap" style="padding-top:0;">
+  <div class="section-label">Pattern 12 — Photo Strip <span>Full-bleed · No text · Section rhythm break</span></div>
+
+  <div style="margin-bottom:24px;">
+    <p style="font-family:'Barlow Condensed'; font-weight:700; font-size:9px; color:var(--g66); text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Example A — 2fr · 1fr · 1fr · 1fr &nbsp;(wide cell left)</p>
+    <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3px; height:160px; background:var(--warm);">
+      <div style="background:#2a2a2a; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Barlow Condensed'; font-weight:700; font-size:9px; color:#555; text-transform:uppercase; letter-spacing:1px;">Wide — 2fr</span>
+      </div>
+      <div style="background:#333; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Barlow Condensed'; font-weight:700; font-size:9px; color:#555; text-transform:uppercase; letter-spacing:1px;">1fr</span>
+      </div>
+      <div style="background:#2e2e2e; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Barlow Condensed'; font-weight:700; font-size:9px; color:#555; text-transform:uppercase; letter-spacing:1px;">1fr</span>
+      </div>
+      <div style="background:#383838; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Barlow Condensed'; font-weight:700; font-size:9px; color:#555; text-transform:uppercase; letter-spacing:1px;">1fr</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:32px;">
+    <p style="font-family:'Barlow Condensed'; font-weight:700; font-size:9px; color:var(--g66); text-transform:uppercase; letter-spacing:2px; margin-bottom:8px;">Example B — 1fr · 1fr · 1fr · 2fr &nbsp;(wide cell right — alternate between strips)</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr 2fr; gap:3px; height:160px; background:var(--warm);">
+      <div style="background:#333; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Barlow Condensed'; font-weight:700; font-size:9px; color:#555; text-transform:uppercase; letter-spacing:1px;">1fr</span>
+      </div>
+      <div style="background:#2e2e2e; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Barlow Condensed'; font-weight:700; font-size:9px; color:#555; text-transform:uppercase; letter-spacing:1px;">1fr</span>
+      </div>
+      <div style="background:#383838; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Barlow Condensed'; font-weight:700; font-size:9px; color:#555; text-transform:uppercase; letter-spacing:1px;">1fr</span>
+      </div>
+      <div style="background:#2a2a2a; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Barlow Condensed'; font-weight:700; font-size:9px; color:#555; text-transform:uppercase; letter-spacing:1px;">Wide — 2fr</span>
+      </div>
+    </div>
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Spec / Value</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Purpose</strong></td>
+        <td><span style="font-family:'Barlow Condensed'; font-weight:700; color:var(--red);">Visual rhythm break</span></td>
+        <td>Sits between sections as a pacing moment. No text, no labels, no captions. Photography only.</td>
+      </tr>
+      <tr>
+        <td><strong>Build Method</strong></td>
+        <td><span style="font-family:'Barlow Condensed'; font-weight:700; color:var(--red);">Section · CSS Grid · Cover images</span></td>
+        <td>Add a section. Inside it add a container set to Advanced CSS Grid with 4 columns. Each cell gets a background image set to Cover. NOT a Wix gallery. NOT a Photoshop file.</td>
+      </tr>
+      <tr>
+        <td><strong>Section Settings</strong></td>
+        <td><span style="font-family:'Barlow Condensed'; font-weight:700; color:var(--red);">Apply Max Width: OFF · No padding</span></td>
+        <td>Turn Apply Max Width OFF so images bleed full width. Set all section padding to 0. Height is a fixed px value set on the section directly.</td>
+      </tr>
+      <tr>
+        <td><strong>Height</strong></td>
+        <td><span style="font-family:'Barlow Condensed'; font-weight:700; color:var(--red);">~180px desktop</span></td>
+        <td>Tablet: ~140px. Mobile: ~120px. Adjust manually at each breakpoint. Enough presence without dominating.</td>
+      </tr>
+      <tr>
+        <td><strong>Grid</strong></td>
+        <td><span style="font-family:'Barlow Condensed'; font-weight:700; color:var(--red);">Asymmetric 4-cell · 3px gap</span></td>
+        <td>One wide cell (2fr) + three narrow cells (1fr each). Alternate wide cell left/right between strips on the same page for variety.</td>
+      </tr>
+      <tr>
+        <td><strong>Photo Tone</strong></td>
+        <td><span style="font-family:'Barlow Condensed'; font-weight:700; color:var(--red);">Consistent within strip</span></td>
+        <td>Either all color or all B&amp;W within a single strip. Never mix. Different strips on the same page may use different treatments.</td>
+      </tr>
+      <tr>
+        <td><strong>Photo Content</strong></td>
+        <td><span style="font-family:'Barlow Condensed'; font-weight:700; color:var(--red);">Company life preferred</span></td>
+        <td>Team moments, events, office, personality shots. BTS project photography acceptable as supporting content but shouldn't dominate a strip.</td>
+      </tr>
+      <tr>
+        <td><strong>Strip Order</strong></td>
+        <td><span style="font-family:'Barlow Condensed'; font-weight:700; color:var(--red);">Escalate in energy</span></td>
+        <td>On pages with multiple strips, save the most unexpected or visually surprising photos for lower strips. Build anticipation as the page progresses.</td>
+      </tr>
+      <tr>
+        <td><strong>Slides / Print</strong></td>
+        <td><span style="font-family:'Barlow Condensed'; font-weight:700; color:var(--red);">Adaptable</span></td>
+        <td>Translates to Google Slides pitch decks as a full-bleed photo row between content slides. Maintain asymmetric proportions and consistent photo tone per strip.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
 
 <!-- ════════════════════════════════════════════════ -->
 <!-- LOGOS -->
